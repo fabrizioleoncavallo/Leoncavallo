@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestCSharp.Pages.Causali {
+namespace TestCSharp.Pages.Articoli {
     
     
-    public partial class ListaCausali {
+    public partial class ListaArticoli {
         
         /// <summary>
         /// pnlFiltri control.
@@ -67,12 +67,21 @@ namespace TestCSharp.Pages.Causali {
         protected global::System.Web.UI.WebControls.Panel pnlRisultati;
         
         /// <summary>
-        /// gvCausali control.
+        /// gvArticoli control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCausali;
+        protected global::System.Web.UI.WebControls.GridView gvArticoli;
+        
+        /// <summary>
+        /// btnAggiungi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAggiungi;
     }
 }

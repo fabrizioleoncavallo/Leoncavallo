@@ -5,6 +5,7 @@ using System.Text;
 
 namespace TestCSharp.BusinessEntity
 {
+    [Serializable]
     public class BECausale
     {
 

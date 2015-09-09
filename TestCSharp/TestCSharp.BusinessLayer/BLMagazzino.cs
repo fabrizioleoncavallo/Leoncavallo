@@ -10,14 +10,14 @@ namespace TestCSharp.BusinessLayer
     public class BLMagazzino
     {
 
-        static DALMagazzino dalMagazzino = new DALMagazzino();
+        static DALMagazzino _dalMagazzino = new DALMagazzino();
 
         public List<BEMagazzino> RicercaMagazzini(BEMagazzino magazzino)
         {
             List<BEMagazzino> result = null;
             try
             {
-                result = dalMagazzino.RicercaMagazzini(magazzino);
+                result = _dalMagazzino.RicercaMagazzini(magazzino);
             }
             catch (Exception ex)
             {
@@ -32,7 +32,7 @@ namespace TestCSharp.BusinessLayer
             bool result = false;
             try
             {
-                result = dalMagazzino.AggiungiMagazzino(magazzino);
+                result = _dalMagazzino.AggiungiMagazzino(magazzino);
             }
             catch (Exception ex)
             {
@@ -47,7 +47,7 @@ namespace TestCSharp.BusinessLayer
             bool result = false;
             try
             {
-                result = dalMagazzino.ModificaMagazzino(magazzino);
+                result = _dalMagazzino.ModificaMagazzino(magazzino);
             }
             catch (Exception ex)
             {
@@ -62,7 +62,7 @@ namespace TestCSharp.BusinessLayer
             bool result = false;
             try
             {
-                result = dalMagazzino.CancellaMagazzino(magazzino);
+                result = _dalMagazzino.CancellaMagazzino(magazzino);
             }
             catch (Exception ex)
             {
@@ -77,7 +77,7 @@ namespace TestCSharp.BusinessLayer
             BEMagazzino result = null;
             try
             {
-                result = dalMagazzino.DettaglioMagazzino(magazzino);
+                result = _dalMagazzino.DettaglioMagazzino(magazzino);
             }
             catch (Exception ex)
             {

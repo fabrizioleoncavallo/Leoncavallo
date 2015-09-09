@@ -12,7 +12,7 @@ namespace TestCSharp.BusinessLayer
 
         DALCausale dalCausale = new DALCausale();
 
-        public List<BECausale> GetListaCausali(BECausale causale)
+        public List<BECausale> RicercaCausali(BECausale causale)
         {
             List<BECausale> result = null;
             try

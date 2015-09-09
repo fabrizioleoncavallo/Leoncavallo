@@ -7,12 +7,12 @@ using System.Web.UI.WebControls;
 using TestCSharp.BusinessEntity;
 using TestCSharp.BusinessLayer;
 
-namespace TestCSharp.Pages.Magazzini
+namespace TestCSharp.Pages.Articoli
 {
-    public partial class CreaMagazzino : System.Web.UI.Page
+    public partial class CreaArticolo : System.Web.UI.Page
     {
 
-        BLMagazzino _blMagazzino = new BLMagazzino();
+        BLArticolo _blArticolo = new BLArticolo();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,14 +24,14 @@ namespace TestCSharp.Pages.Magazzini
             {
                 if (Page.IsValid)
                 {
-                    BEMagazzino magazzino = new BEMagazzino()
+                    BEArticolo articolo = new BEArticolo()
                     {
                         Nome = txtNome.Text
                     };
-                    bool result = AggiungiMagazzino(magazzino);
+                    bool result = AggiungiArticolo(articolo);
                     if (result)
                     {
-                        Response.Redirect("ListaMagazzini.aspx", false);
+                        Response.Redirect("ListaArticoli.aspx", false);
                     }
                     else
                     {
@@ -49,7 +49,7 @@ namespace TestCSharp.Pages.Magazzini
         {
             try
             {
-                Response.Redirect("ListaMagazzini.aspx", false);
+                Response.Redirect("ListaArticoli.aspx", false);
             }
             catch (Exception ex)
             {
@@ -57,11 +57,11 @@ namespace TestCSharp.Pages.Magazzini
             }
         }
 
-        private bool AggiungiMagazzino(BEMagazzino magazzino)
+        private bool AggiungiArticolo(BEArticolo articolo)
         {
-            bool result = _blMagazzino.AggiungiMagazzino(magazzino);
+            bool result = _blArticolo.AggiungiArticolo(articolo);
             return result;
         }
-
+        
     }
 }

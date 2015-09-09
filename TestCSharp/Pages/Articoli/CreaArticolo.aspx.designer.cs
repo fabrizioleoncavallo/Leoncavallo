@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestCSharp.Pages.Causali {
+namespace TestCSharp.Pages.Articoli {
     
     
-    public partial class ListaCausali {
+    public partial class CreaArticolo {
         
         /// <summary>
-        /// pnlFiltri control.
+        /// pnlCreaArticolo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlFiltri;
+        protected global::System.Web.UI.WebControls.Panel pnlCreaArticolo;
         
         /// <summary>
         /// lblNome control.
@@ -40,39 +40,39 @@ namespace TestCSharp.Pages.Causali {
         protected global::System.Web.UI.WebControls.TextBox txtNome;
         
         /// <summary>
-        /// btnResetta control.
+        /// rfvNome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnResetta;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNome;
         
         /// <summary>
-        /// btnRicerca control.
+        /// btnAnnulla control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRicerca;
+        protected global::System.Web.UI.WebControls.Button btnAnnulla;
         
         /// <summary>
-        /// pnlRisultati control.
+        /// btnAggiungi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlRisultati;
+        protected global::System.Web.UI.WebControls.Button btnAggiungi;
         
         /// <summary>
-        /// gvCausali control.
+        /// valSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCausali;
+        protected global::System.Web.UI.WebControls.ValidationSummary valSummary;
     }
 }

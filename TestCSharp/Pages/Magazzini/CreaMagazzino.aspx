@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreaMagazzino.aspx.cs"
-    Inherits="TestCSharp.Pages.CreaMagazzino" MasterPageFile="~/Site.Master" %>
+    Inherits="TestCSharp.Pages.Magazzini.CreaMagazzino" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
@@ -15,7 +15,7 @@
                 <td>
                     <asp:TextBox runat="server" ID="txtNome"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ID="rfvNome" ControlToValidate="txtNome"
-                        ErrorMessage="Il nome è un campo obbligatorio" Display="None" ValidationGroup="vgAggiungi"></asp:RequiredFieldValidator>
+                        ErrorMessage="Il nome è un campo obbligatorio" Text="*" Display="None" ValidationGroup="vgAggiungi"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListaMagazzini.aspx.cs"
-    Inherits="TestCSharp.Pages.ListaMagazzini" MasterPageFile="~/Site.Master" %>
+    Inherits="TestCSharp.Pages.Magazzini.ListaMagazzini" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
@@ -34,12 +34,12 @@
         <asp:Panel runat="server" ID="pnlRisultati">
             <asp:GridView runat="server" ID="gvMagazzini" AutoGenerateColumns="False">
                 <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="Id" />
+                    <asp:BoundField DataField="Id" HeaderText="Id" Visible="false"/>
                     <asp:BoundField DataField="Nome" HeaderText="Nome" />
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button runat="server" ID="btnDettaglio" Text="Dettaglio" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "Id")%>'
-                                OnClick="btnDettaglio_Click" Style="cursor: hand" />
+                            <asp:Button runat="server" ID="btnModifica" Text="Modifica" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "Id")%>'
+                                OnClick="btnModifica_Click" Style="cursor: hand" />
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>

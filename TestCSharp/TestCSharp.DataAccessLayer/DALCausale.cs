@@ -15,6 +15,7 @@ namespace TestCSharp.DataAccessLayer
         {
             _ListaCausali = new List<BECausale>()
                 {
+                    //lista statica
                     new BECausale(1, "Carico"),
                     new BECausale(2, "Scarico per Furto"),
                     new BECausale(3, "Scarico per Vendita"),
@@ -27,6 +28,7 @@ namespace TestCSharp.DataAccessLayer
             List<BECausale> result = null;
             try
             {
+                //query di ricerca in like sul nome
                 result = (from a in _ListaCausali
                           where (string.IsNullOrWhiteSpace(causale.Nome) || a.Nome.ToLower().Contains(causale.Nome.ToLower()))
                           select a).ToList();

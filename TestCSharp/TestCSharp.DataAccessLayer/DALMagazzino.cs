@@ -10,10 +10,12 @@ namespace TestCSharp.DataAccessLayer
     {
 
         private List<BEMagazzino> _ListaMagazzini { get; set; }
+        private int _Id { get; set; }
 
         public DALMagazzino()
         {
             _ListaMagazzini = new List<BEMagazzino>();
+            _Id = 0;
         }
 
         public List<BEMagazzino> RicercaMagazzini(BEMagazzino magazzino)
@@ -21,6 +23,7 @@ namespace TestCSharp.DataAccessLayer
             List<BEMagazzino> result = null;
             try
             {
+                //query di ricerca in like sul nome
                 result = (from a in _ListaMagazzini
                           where (string.IsNullOrWhiteSpace(magazzino.Nome) || a.Nome.ToLower().Contains(magazzino.Nome.ToLower()))
                           select a).ToList();
@@ -38,12 +41,8 @@ namespace TestCSharp.DataAccessLayer
             bool result = false;
             try
             {
-                int maxId = 0;
-                if (_ListaMagazzini != null && _ListaMagazzini.Count > 0)
-                {
-                    maxId = _ListaMagazzini.Max(a => a.Id);
-                }
-                magazzino.Id = maxId + 1;
+                _Id = _Id + 1; //per simulare la sequence del db
+                magazzino.Id = _Id;
                 _ListaMagazzini.Add(magazzino);
                 result = true;
             }

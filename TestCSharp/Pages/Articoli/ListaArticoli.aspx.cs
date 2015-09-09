@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 using TestCSharp.BusinessEntity;
 using TestCSharp.BusinessLayer;
 
-namespace TestCSharp.Pages.Magazzini
+namespace TestCSharp.Pages.Articoli
 {
-    public partial class ListaMagazzini : System.Web.UI.Page
+    public partial class ListaArticoli : System.Web.UI.Page
     {
-
-        BLMagazzino _blMagazzino = new BLMagazzino();
+        BLArticolo _blArticolo = new BLArticolo();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +19,7 @@ namespace TestCSharp.Pages.Magazzini
             {
                 if (!Page.IsPostBack)
                 {
-                    RicercaMagazzini();
+                    RicercaArticoli();
                 }
             }
             catch (Exception ex)
@@ -33,7 +32,7 @@ namespace TestCSharp.Pages.Magazzini
         {
             try
             {
-                RicercaMagazzini();
+                RicercaArticoli();
             }
             catch (Exception ex)
             {
@@ -46,7 +45,7 @@ namespace TestCSharp.Pages.Magazzini
             try
             {
                 txtNome.Text = string.Empty;
-                RicercaMagazzini();
+                RicercaArticoli();
             }
             catch (Exception ex)
             {
@@ -58,7 +57,7 @@ namespace TestCSharp.Pages.Magazzini
         {
             try
             {
-                Response.Redirect("CreaMagazzino.aspx", false);
+                Response.Redirect("CreaArticolo.aspx", false);
             }
             catch (Exception ex)
             {
@@ -72,8 +71,8 @@ namespace TestCSharp.Pages.Magazzini
             {
                 //recupera l'id dal command argument del bottone
                 int id = int.Parse(((Button)sender).CommandArgument);
-                Session["IdMagazzino"] = id;
-                Response.Redirect("DettaglioMagazzino.aspx", false);
+                Session["IdArticolo"] = id;
+                Response.Redirect("DettaglioArticolo.aspx", false);
             }
             catch (Exception ex)
             {
@@ -87,14 +86,14 @@ namespace TestCSharp.Pages.Magazzini
             {
                 //recupera l'id dal command argument del bottone
                 int id = int.Parse(((Button)sender).CommandArgument);
-                BEMagazzino magazzino = new BEMagazzino()
+                BEArticolo articolo = new BEArticolo()
                 {
                     Id = id
                 };
-                bool result = _blMagazzino.CancellaMagazzino(magazzino);
+                bool result = _blArticolo.CancellaArticolo(articolo);
                 if (result)
                 {
-                    RicercaMagazzini();
+                    RicercaArticoli();
                 }
                 else
                 {
@@ -108,20 +107,20 @@ namespace TestCSharp.Pages.Magazzini
 
         }
 
-        private void RicercaMagazzini()
+        private void RicercaArticoli()
         {
-            BEMagazzino magazzino = new BEMagazzino()
+            BEArticolo articolo = new BEArticolo()
             {
                 Nome = txtNome.Text
             };
-            List<BEMagazzino> listaMagazzini = _blMagazzino.RicercaMagazzini(magazzino);
-            BindGvMagazzini(listaMagazzini);
+            List<BEArticolo> listaArticoli = _blArticolo.RicercaArticoli(articolo);
+            BindGvArticoli(listaArticoli);
         }
 
-        private void BindGvMagazzini(List<BEMagazzino> listaMagazzini)
+        private void BindGvArticoli(List<BEArticolo> listaArticoli)
         {
-            gvMagazzini.DataSource = listaMagazzini;
-            gvMagazzini.DataBind();
+            gvArticoli.DataSource = listaArticoli;
+            gvArticoli.DataBind();
         }
 
     }

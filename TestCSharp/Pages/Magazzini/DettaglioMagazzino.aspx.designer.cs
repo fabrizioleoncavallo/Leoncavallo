@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestCSharp.Pages {
+namespace TestCSharp.Pages.Magazzini {
     
     
     public partial class DettaglioMagazzino {

@@ -43,6 +43,7 @@
     <Compile Include="BEArticolo.cs" />
     <Compile Include="BEMagazzino.cs" />
     <Compile Include="BECausale.cs" />
+    <Compile Include="BEMovimentazioneArticolo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

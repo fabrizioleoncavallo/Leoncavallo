@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using TestCSharp.BusinessEntity;
 using TestCSharp.BusinessLayer;
 
-namespace TestCSharp.Pages
+namespace TestCSharp.Pages.Magazzini
 {
     public partial class DettaglioMagazzino : System.Web.UI.Page
     {
@@ -17,11 +17,11 @@ namespace TestCSharp.Pages
         {
             set
             {
-                ViewState["_Magazzino"] = value;
+                ViewState["Magazzino"] = value;
             }
             get
             {
-                return ViewState["_Magazzino"] != null ? (BEMagazzino)ViewState["_Magazzino"] : null;
+                return ViewState["Magazzino"] != null ? (BEMagazzino)ViewState["Magazzino"] : null;
             }
         }
 
@@ -36,6 +36,7 @@ namespace TestCSharp.Pages
             }
             catch (Exception ex)
             {
+                UtilityPopup.PopupErrore(Page, ex.Message);
             }
         }
 
@@ -46,13 +47,20 @@ namespace TestCSharp.Pages
                 if (Page.IsValid)
                 {
                     _Magazzino.Nome = txtNome.Text;
-                    _blMagazzino.ModificaMagazzino(_Magazzino);
-                    //Page.ClientScript.RegisterStartupScript(this.GetType(), "alertResult", "alert('Operazione eseguita con successo');", true);
-                    Response.Redirect("ListaMagazzini.aspx", false);
+                    bool result = _blMagazzino.ModificaMagazzino(_Magazzino);
+                    if (result)
+                    {
+                        Response.Redirect("ListaMagazzini.aspx", false);
+                    }
+                    else
+                    {
+                        UtilityPopup.PopupErrore(Page);
+                    }
                 }
             }
             catch (Exception ex)
             {
+                UtilityPopup.PopupErrore(Page, ex.Message);
             }
         }
 
@@ -64,6 +72,7 @@ namespace TestCSharp.Pages
             }
             catch (Exception ex)
             {
+                UtilityPopup.PopupErrore(Page, ex.Message);
             }
         }
 
@@ -91,8 +100,7 @@ namespace TestCSharp.Pages
 
         private bool AggiungiMagazzino(BEMagazzino magazzino)
         {
-            BLMagazzino blMagazzino = new BLMagazzino();
-            bool result = blMagazzino.AggiungiMagazzino(magazzino);
+            bool result = _blMagazzino.AggiungiMagazzino(magazzino);
             return result;
         }
 

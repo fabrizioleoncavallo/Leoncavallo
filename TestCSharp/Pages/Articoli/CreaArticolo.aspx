@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DettaglioMagazzino.aspx.cs"
-    Inherits="TestCSharp.Pages.Magazzini.DettaglioMagazzino" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreaArticolo.aspx.cs"
+    Inherits="TestCSharp.Pages.Articoli.CreaArticolo" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <h1>
-            Dettaglio magazzino</h1>
+            Crea articolo</h1>
     </div>
-    <asp:Panel runat="server" ID="pnlDettaglioMagazzino">
+    <asp:Panel runat="server" ID="pnlCreaArticolo">
         <table>
             <tr>
                 <td>
@@ -15,17 +15,18 @@
                 <td>
                     <asp:TextBox runat="server" ID="txtNome"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ID="rfvNome" ControlToValidate="txtNome"
-                        ErrorMessage="Il nome è un campo obbligatorio" Text="*" Display="None" ValidationGroup="vgSalva"></asp:RequiredFieldValidator>
+                        ErrorMessage="Il nome è un campo obbligatorio" Text="*" Display="None" ValidationGroup="vgAggiungi"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Button runat="server" ID="btnAnnulla" Text="Indietro" OnClick="btnAnnulla_Click" />
+                    <asp:Button runat="server" ID="btnAnnulla" Text="Annulla" OnClick="btnAnnulla_Click" />
                 </td>
                 <td>
-                    <asp:Button runat="server" ID="btnSalva" Text="Salva" OnClick="btnSalva_Click" ValidationGroup="vgSalva" />
+                    <asp:Button runat="server" ID="btnAggiungi" Text="Aggiungi" OnClick="btnAggiungi_Click"
+                        ValidationGroup="vgAggiungi" />
                     <asp:ValidationSummary ID="valSummary" runat="server" ShowSummary="false" ShowMessageBox="true"
-                        ValidationGroup="vgSalva" />
+                        ValidationGroup="vgAggiungi" />
                 </td>
             </tr>
         </table>

@@ -18,24 +18,26 @@
                 </h1>
             </div>
             <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/Pages/ListaArticoli.aspx" Text="Lista articoli"/>
-                        <asp:MenuItem NavigateUrl="~/Pages/Magazzini/ListaMagazzini.aspx" Text="Lista magazzini"/>
-                        <asp:MenuItem NavigateUrl="~/Pages/Causali/ListaCausali.aspx" Text="Lista causali"/>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                        <asp:MenuItem NavigateUrl="~/Pages/Articoli/ListaArticoli.aspx" Text="Lista articoli" />
+                        <asp:MenuItem NavigateUrl="~/Pages/Magazzini/ListaMagazzini.aspx" Text="Lista magazzini" />
+                        <asp:MenuItem NavigateUrl="~/Pages/Causali/ListaCausali.aspx" Text="Lista causali" />
                     </Items>
                 </asp:Menu>
             </div>
         </div>
+        <asp:ContentPlaceHolder ID="ScriptIncludePlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
         <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
         <div class="clear">
         </div>
     </div>
     <div class="footer">
-        
     </div>
     </form>
 </body>

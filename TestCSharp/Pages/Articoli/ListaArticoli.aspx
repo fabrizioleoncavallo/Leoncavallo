@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListaCausali.aspx.cs" Inherits="TestCSharp.Pages.Causali.ListaCausali"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListaArticoli.aspx.cs" Inherits="TestCSharp.Pages.Articoli.ListaArticoli"
     MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <h1>
-            Lista causali</h1>
+            Lista articoli</h1>
     </div>
     <fieldset>
         <legend>Ricerca</legend>
@@ -32,12 +32,25 @@
     <fieldset>
         <legend>Risultati</legend>
         <asp:Panel runat="server" ID="pnlRisultati">
-            <asp:GridView runat="server" ID="gvCausali" AutoGenerateColumns="False">
+            <asp:GridView runat="server" ID="gvArticoli" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="Id" Visible="false"/>
                     <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button runat="server" ID="btnModifica" Text="Modifica" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "Id")%>'
+                                OnClick="btnModifica_Click" Style="cursor: hand" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button runat="server" ID="btnCancella" Text="Cancella" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "Id")%>'
+                                OnClick="btnCancella_Click" Style="cursor: hand" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </asp:Panel>
     </fieldset>
+    <asp:Button runat="server" ID="btnAggiungi" Text="Aggiungi" OnClick="btnAggiungi_Click" />
 </asp:Content>

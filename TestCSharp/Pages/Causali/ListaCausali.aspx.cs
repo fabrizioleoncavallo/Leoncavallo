@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using TestCSharp.BusinessEntity;
 using TestCSharp.BusinessLayer;
 
-namespace TestCSharp.Pages
+namespace TestCSharp.Pages.Causali
 {
     public partial class ListaCausali : System.Web.UI.Page
     {
@@ -25,6 +25,7 @@ namespace TestCSharp.Pages
             }
             catch (Exception ex)
             {
+                UtilityPopup.PopupErrore(Page, ex.Message);
             }
         }
 
@@ -36,6 +37,7 @@ namespace TestCSharp.Pages
             }
             catch (Exception ex)
             {
+                UtilityPopup.PopupErrore(Page, ex.Message);
             }
         }
 
@@ -48,6 +50,7 @@ namespace TestCSharp.Pages
             }
             catch (Exception ex)
             {
+                UtilityPopup.PopupErrore(Page, ex.Message);
             }
         }
 
@@ -57,7 +60,7 @@ namespace TestCSharp.Pages
             {
                 Nome = txtNome.Text
             };
-            List<BECausale> listaCausali = _blCausale.GetListaCausali(causale);
+            List<BECausale> listaCausali = _blCausale.RicercaCausali(causale);
             BindGvCausali(listaCausali);
         }
 
